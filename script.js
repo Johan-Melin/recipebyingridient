@@ -13,13 +13,17 @@ for (const recipe in recipes) {
     return obj
   }, ingridients)
 
-  let newEl = document.createElement('div')
+  const newEl = document.createElement('div')
   newEl.innerHTML = recipe + " (" + recipes[recipe].length + ")"
   recipeArea.appendChild(newEl)
 }
 
 for (const ingridient in ingridients) {
-  let newEl = document.createElement('div')
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  ingredientArea.appendChild(checkbox)
+
+  const newEl = document.createElement('div')
   newEl.innerHTML = ingridient + " (" + ingridients[ingridient] + ")"
   ingredientArea.appendChild(newEl)
 }
